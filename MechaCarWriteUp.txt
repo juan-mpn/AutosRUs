@@ -1,8 +1,9 @@
-AutosRU's
-Data Analytics Team
+# AutosRU's
+## Data Analytics Team
 3/14/2020
 MechaCarChallengeRScript.R
 
+##Background
 The results of an mpg testing dataset of 50 potential prototype MechaCars. The MechaCar prototypes were produced using multiple design specifications to identify ideal vehicle performance.
 
 Analysis using R Studio multiple linear regresion, designed a linear model that can predict the mpg of MechaCar prototypes using the following variables: 
@@ -25,7 +26,9 @@ length    -0.12271790  0.60947984 -0.31663112  1.00000000  0.02577114  0.0856566
 angle     -0.11307851 -0.02083999 -0.21112057  0.02577114  1.00000000 -0.09120266
 AWD       -0.03698098 -0.14166977 -0.15214456  0.08565668 -0.09120266  1.00000000
 
-We can clearly see there is direct correlation between mpg and lenght. Using this information our analysis continous to take these two variables in our main analysis for linear regresion. Ground clearance and lenght provide a non-randmom amount of variance to the MPG that is consistent with the correlation results, specially lenght. 
+## Linear Regresion Analysis / MechaCar prototypes
+We can clearly see there is direct correlation between mpg and lenght. Using this information from our analysis continous to take these two variables in our main analysis for linear regresion. In addition we found p-value: 5.35e-11 which is smaller than 0.05 significance level. There is a slope, we can confirm statistically with evidence that Ground clearance and lenght provide a non-randmom amount of variance to the MPG that is consistent with the correlation results shows 71% of accuracy. There is some correlation to weight but the evidence is has no significance according to minimal significance level of 0.05. We can also determine that there can be additional factors and variables impacting MPG that have not been taking in consideration by this dataset and those may have also have direct correlation to MPG variability. 
+
 
 Call:
 lm(formula = mpg ~ length + AWD + clearance + weight + angle, 
@@ -66,8 +69,8 @@ Manufacturing_Lot
 3	Lot3	1452	1496.14		1542	  1498.5	13.0493725	170.2861224	50
 Showing 1 to 3 of 3 entries, 8 total columns
 
-- Statistical Study Design Suspesion Coil T-Test
-The diesign specifications for the MechaCar suspension coils dictate that the variance of the suspension coild must not exceed 100 pounds per inch. We can see the suspension coil's pound-per-inch results are not statistically different from the mean population results of 1,500 pounds per inch as the p-value from the T-Test are small enough to stay in the 100 pounds per inch variance. 
+## Statistical Study Design Suspesion Coil T-Test
+The diesign specifications for the MechaCar suspension coils dictate that the variance of the suspension coild must not exceed 100 pounds per inch. We can see the suspension coil's pound-per-inch results are not statistically different from the mean population results of 1,500 pounds per inch as the p-value from the T-Test are small enough to stay in the 100 pounds per inch variance. But there is a concern with Lot3 having a higher variability  with p-value = 0.04347, still lower than 0.05 singnificance level, this gives enough evidence that Lot3 mean suspension coil PSI is statistically not the same from the dataset mean. 
 
 Paired t-test below.
 
@@ -95,3 +98,5 @@ sample estimates:
 mean of the differences 
                    3.86 
 
+## New Study Design 
+The dataset can be improved capturing engine size and tire size that will directly correlate to fuel effiency and MPG. The new study can be easily implemented as the information from the MechaCar prototypes will be readily available from the prototypes. The null hypothesis would be there is no statistical difference between MechaCar engine size and tire size and the engine size and tire size of other comparable vehicles. The alternative hypothesis would be that there is a statistical difference between engine size and tire size of MechaCar when comapred to other vehicles. We will need multiple data points for different tire sizes and engine sizes. Utilizing correlation matrix, linear regresion and t-test analysis we could conclude if there is statistical evindence to support the hypothesis.

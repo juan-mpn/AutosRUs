@@ -28,7 +28,16 @@ length    -0.12271790  0.60947984 -0.31663112  1.00000000  0.02577114  0.0856566
 angle     -0.11307851 -0.02083999 -0.21112057  0.02577114  1.00000000 -0.09120266
 AWD       -0.03698098 -0.14166977 -0.15214456  0.08565668 -0.09120266  1.00000000
 
-We can clearly see there is direct correlation between mpg and lenght. Using this information our analysis continous to take these two variables in our main analysis for linear regresion. 
+We can clearly see there is direct correlation between mpg and lenght as shown in the below graphs. Using this information our analysis continous to take these two variables in our main analysis for linear regresion. 
+
+Scatter![alt text](https://github.com/juan-mpn/AutosRUs/blob/master/Resources/mpgvslengthscatter.png)
+
+
+LinearRegresion![alt text](https://github.com/juan-mpn/AutosRUs/blob/master/Resources/lengthmpg-LinearRegresion.png)
+
+
+PSIvsDensity![alt text](https://github.com/juan-mpn/AutosRUs/blob/master/Resources/PSIDensityPlot.png)
+
 
 Call:
 lm(formula = mpg ~ length + AWD + clearance + weight + angle, 

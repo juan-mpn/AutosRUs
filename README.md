@@ -68,20 +68,21 @@ mpg = 6.267e+00length + -1.040e+02
 
 We can also see Pearson p-value 5.35e-11 and our r-squared 0.7149. This is sufficient evidence to reject our null hypotesis, which means that the slope of our linear model is not zero as we can visualize in the linear regresion model using ggplot2 being a positive correlation where x-axis(MPG) increases, the variable on the y-axis (Length) increases as well. 
 
-# ----------------------- Coil Suspension Analysis ------- t-test
-## Min, Mean, Max, Median, Standard Deviation, Variance, Num of Vehicles per lot
-Manufacturing_Lot
+##----------------------- Coil Suspension Analysis ------- t-test
+##Min, Mean, Max, Median, Standard Deviation, Variance, Num of Vehicles per lot
+**Manufacturing_Lot**
 		Min_PSI - Mean_PSI - Maximum_PSI - Med_PSI - StandDev_PSI - 	Variance - Num_Vehicles
 1	Lot1	1498	1500.00		1502	  1500.0	0.9897433	0.9795918	50
 2	Lot2	1494	1500.20		1506	  1500.0	2.7330181	7.4693878	50
 3	Lot3	1452	1496.14		1542	  1498.5	13.0493725	170.2861224	50
 Showing 1 to 3 of 3 entries, 8 total columns
 
-We can clearly see a much better product on Lot1, having a perfect Mean 1500 and very small variance. We need to look deeper on what change when Lot2 and Lot3 where produced and perform further analysis and more testing. The same is shown in the Paired t-test below.
+We can clearly see a much better product on Lot1, having a perfect Mean 1500 and very small variance. We need to look deeper on what change when Lot2 and Lot3 where produced and perform further analysis and more testing. The same is shown in the Paired t-test below. This is enough evidence to show that Lot 3 mean suspension coil PSI is out of specification and statistically it can be classified as different from the rest of the population mean. We could be within specification if we use the entire dataset that includes all three lots but we have to point out that **Lot 3 is statistically different and out of sepecifications**.
+
 
 	Paired t-test
 
-data:  mcoilL1$PSI and mcoilL2$PSI
+**data:  Lot 1 and Lot2**
 t = -0.52031, df = 49, p-value = 0.6052
 alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
@@ -90,15 +91,14 @@ sample estimates:
 mean of the differences 
                    -0.2 
 
-> t.test(mcoilL1$PSI,mcoilL3$PSI,paired = T) 
-
-	Paired t-test
-
-data:  mcoilL1$PSI and mcoilL3$PSI
-t = 2.0728, df = 49, p-value = 0.04347
+**Lot3: PSI different from the rest of the population**
+t = 2.0728, df = 49, **p-value = 0.04347**
 alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
  0.1177828 7.6022172
 sample estimates:
 mean of the differences 
                    3.86 
+
+##New Design Study**
+A new study that will be very intersting to consumers would be to compare wheel size against engine size. It is well known that if we have the incorrect tire size there can be fuel effiency cost. Finding the correct pair it can bring savings for consumers and they will be very insterested in finding that marketing can show this correlation proven scietifically unsing mathematical/machine learning models how we achive this effiency. This data is already available and it could be easily obtained by MechaCar vehicles. The null hypothesis would be that there is no stistical difference between MechaCar fuel effiency and other makers of similar vehicles. The alternative hypothesis would be that there is a statistical difference between fuel efficency of MechaCar when compared to other makers. The population data that we will request MechaCar would be all comparable vehicles using one-sample t-test we can perform this analysis. It will be absolutely necessary that MechaCar provides tire size and engine size to arrive to the conclusion of what is the best combination for fuel effiency.
